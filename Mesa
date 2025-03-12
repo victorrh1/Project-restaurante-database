@@ -1,0 +1,10 @@
+# Mesa
+
+CREATE TABLE mesa (
+    id_mesa SERIAL PRIMARY KEY,
+    id_restaurante INT REFERENCES restaurante(id_restaurante) ON DELETE CASCADE,
+    numero_mesa INT NOT NULL,
+    capacidade INT NOT NULL,
+    status VARCHAR(20) DEFAULT 'Disponível' CHECK (status IN ('Disponível', 'Ocupada')),
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
