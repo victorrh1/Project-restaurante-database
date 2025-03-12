@@ -1,0 +1,10 @@
+# Reserva
+
+CREATE TABLE reserva (
+    id_reserva SERIAL PRIMARY KEY,
+    id_usuario INT REFERENCES usuario(id_usuario) ON DELETE CASCADE,
+    id_mesa INT REFERENCES mesa(id_mesa) ON DELETE CASCADE,
+    data_reserva DATE NOT NULL CHECK (data_reserva >= CURRENT_DATE),
+    horario_reserva TIME NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
