@@ -1,0 +1,11 @@
+# Restaurante
+
+CREATE TABLE restaurante (
+    id_restaurante SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    endereco TEXT NOT NULL,
+    telefone VARCHAR(15),
+    horario_funcionamento TEXT,
+    capacidade_mesas INT
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
