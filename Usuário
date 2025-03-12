@@ -1,0 +1,9 @@
+# Usuário
+
+CREATE TABLE usuario (
+    id_usuario SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha_hash TEXT NOT NULL
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
